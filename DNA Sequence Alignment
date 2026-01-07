@@ -12,7 +12,7 @@ from Bio.Align import PairwiseAligner
 #     print(i, seq2[i-1])
 
 
-'''Sequence Comparison 1: "GLOAL" '''
+'''Sequence Comparison 1: "GLOBAL" '''
 
 seq1 = "AT"
 seq2 = "AT"
@@ -27,7 +27,7 @@ print(best_alignment)
 
 
 
-'''Sequence Comparison 2: "GLOAL" '''
+'''Sequence Comparison 2: "GLOBAL" '''
 
 seq3 = "ATGA"
 seq4 = "ATGG"
