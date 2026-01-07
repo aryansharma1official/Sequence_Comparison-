@@ -1,0 +1,58 @@
+# DNA Sequece Alignment using Local as well as global alignments
+
+
+from Bio.Align import PairwiseAligner
+
+
+
+# # for i in range(1, len(seq2)+1):
+# #     print(i, seq2[i-1])
+
+# for i,base in enumerate(seq2, start=1):
+#     print(i, seq2[i-1])
+
+
+'''Sequence Comparison 1: "GLOAL" '''
+
+seq1 = "AT"
+seq2 = "AT"
+
+aligner = PairwiseAligner()
+aligner.mode = "global"
+
+alignments = aligner.align(seq1, seq2)
+best_alignment = alignments[0]
+print(best_alignment)
+
+
+
+
+'''Sequence Comparison 2: "GLOAL" '''
+
+seq3 = "ATGA"
+seq4 = "ATGG"
+
+aligner2 = PairwiseAligner()
+aligner2.mode = "global"
+alignments2 = aligner2.align(seq3, seq4)
+best_alignment2 = alignments2[0]
+second_best_alignment2 = alignments2[1]
+print(f"Best Alignment:\n{best_alignment2}\n\n\n")
+print(f"Second Best Alignment:\n{second_best_alignment2}")
+
+
+
+
+
+''' Sequence Comparison 3: "LOCAL" '''
+
+seq5 = "AACGTAGTAGTCATGTCG"
+seq6 = "AACGTAGTAGATGCC"
+
+aligner3 = PairwiseAligner()
+aligner3.mode = "local"
+alignments3 = aligner3.align(seq5, seq6)
+best_alignment3 = alignments3[0]
+second_best_alignment3 = alignments3[1]
+print(f"Best Alignment:\n{best_alignment3}\n\n\n")
+print(f"Second Best Alignment:\n{second_best_alignment3}\n\n\n")
