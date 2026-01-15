@@ -1,0 +1,29 @@
+# GC percentage
+
+'''                                 MANUAL METHOD                                    '''
+
+# s = "GCTACGGCGCGCAGCTAGG"
+# print(s)
+# slen = len(s)
+# print(slen)
+# i=0
+# for letters in s:
+#     if letters == "G" or letters == "C":
+#         print(letters)
+#         i+=1
+# print(i)
+
+# totalgc = ((i/slen)*100)
+
+# print(f"Total GC pernetage is: {totalgc} %")
+
+
+
+'''                             USING LIBRARY METHODS                                '''
+
+from Bio import SeqIO
+
+for record in SeqIO.parse("my_sequence.fasta", "fasta"):
+    seq = str(record.seq).upper()
+    gc = ((seq.count("C")+seq.count("G"))/len(seq))*100
+    print(f"ID: {record.id}\nDescription: {record.description}\n\nSequence: {record.seq}\n GC content: {gc}")
